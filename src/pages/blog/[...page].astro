@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
 import { Card, Pagination } from 'accessible-astro-components'
 
 export async function getStaticPaths({ paginate }) {
@@ -12,7 +12,7 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props
 ---
 
-<DefaultLayout
+<BaseLayout
   title="Blog"
   description="An example of a blog with dynamic content fetched from JSONPlaceholder using the title, body and userId."
 >
@@ -56,7 +56,7 @@ const { page } = Astro.props
       </div>
     </div>
   </section>
-</DefaultLayout>
+</BaseLayout>
 
 <style lang="scss">
   ul {

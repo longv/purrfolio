@@ -1,13 +1,13 @@
 ---
-import DefaultLayout from '../../layouts/DefaultLayout.astro'
-import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import { Breadcrumbs, BreadcrumbsItem } from "accessible-astro-components"
 
 export async function getStaticPaths() {
-  const data = await fetch('https://jsonplaceholder.typicode.com/posts').then((response) => response.json())
+  const data = await fetch("https://jsonplaceholder.typicode.com/posts").then((response) => response.json())
 
   return data.map((post) => {
     return {
-      params: { post: post.title.replaceAll(' ', '-').toLowerCase() },
+      params: { post: post.title.replaceAll(" ", "-").toLowerCase() },
       props: { post },
     }
   })
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props
 ---
 
-<DefaultLayout title={post.title} description={post.body} url={post.title}>
+<BaseLayout title={post.title} description={post.body} url={post.title}>
   <div class="container">
     <div class="mt-12">
       <Breadcrumbs>
@@ -37,7 +37,7 @@ const { post } = Astro.props
       <p class="text-2xl">{post.body}</p>
     </div>
   </section>
-</DefaultLayout>
+</BaseLayout>
 
 <style lang="scss">
   ul {

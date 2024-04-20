@@ -1,0 +1,33 @@
+---
+import { Container, Grid, Flex, Avatar, Button, Inset } from "@radix-ui/themes";
+import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+
+import { getEntry } from "astro:content";
+const entry = await getEntry("about", "me");
+const { Content } = await entry.render();
+---
+
+<Flex className="w-screen h-screen">
+  <Container align="center" width="max-content">
+    <Flex justify="center" pb="4">
+      <Avatar
+        client:load
+        src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
+        fallback="A"
+        size="9"
+        radius="full"
+      />
+    </Flex>
+    <Grid columns="2" gap="3">
+      <Button variant="outline" radius="full">
+        <GitHubLogoIcon /> GitHub
+      </Button>
+      <Button variant="outline" radius="full">
+        <LinkedInLogoIcon /> LinkedIn
+      </Button>
+    </Grid>
+  </Container>
+  <Container flexGrow="3">
+    <Content />
+  </Container>
+</Flex>

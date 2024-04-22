@@ -1,23 +1,54 @@
 ---
 import Feature from "@components/Feature.astro";
+import SpriteAnimator from "@components/animation/SpriteAnimator.astro";
+import SiameseLickingSpriteSheet from "@assets/sprites/siamese-licking.png";
+import YellowLoafSpriteSheet from "@assets/sprites/yellow-loaf.png";
+import PinkPlayingSpriteSheet from "@assets/sprites/pink-playing.png";
 ---
 
 <section class="my-36">
   <div class="container">
     <h2 class="mb-16 text-6xl">Let's talk</h2>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-      <Feature icon="vscode-icons:file-type-devcontainer" title="Fullstack">
-        About 7 years of developing mobile and web applications, with broad and
-        deep knowledge in both frontend and backend.
-      </Feature>
-      <Feature icon="vscode-icons:file-type-gdscript" title="Game">
-        Passionate in games and currently pursuing game development as a side
-        career.
-      </Feature>
-      <Feature icon="vscode-icons:file-type-pythowo" title="AI / ML">
-        Learning about Big Data as well as AI and Machine Learning at Aalto
-        University to support current profession.
-      </Feature>
+      <div class="relative pt-10">
+        <div class="absolute -left-[64px] -top-[92px]">
+          <SpriteAnimator
+            slot="sprite"
+            src={SiameseLickingSpriteSheet}
+            totalFrames={15}
+          />
+        </div>
+        <Feature icon="vscode-icons:file-type-devcontainer" title="Fullstack">
+          About 7 years of developing mobile and web applications, with broad
+          and deep knowledge in both frontend and backend.
+        </Feature>
+      </div>
+      <div class="relative pt-10">
+        <div class="absolute -top-[80px] left-[80px]">
+          <SpriteAnimator
+            slot="sprite"
+            src={YellowLoafSpriteSheet}
+            totalFrames={4}
+          />
+        </div>
+        <Feature icon="vscode-icons:file-type-gdscript" title="Game">
+          Passionate in games and currently pursuing game development as a side
+          career.
+        </Feature>
+      </div>
+      <div class="relative pt-10">
+        <div class="absolute -right-[30px] -top-[100px] -scale-x-100">
+          <SpriteAnimator
+            slot="sprite"
+            src={PinkPlayingSpriteSheet}
+            totalFrames={8}
+          />
+        </div>
+        <Feature icon="vscode-icons:file-type-pythowo" title="AI / ML">
+          Learning about Big Data as well as AI and Machine Learning at Aalto
+          University to support current profession.
+        </Feature>
+      </div>
     </div>
   </div>
 </section>

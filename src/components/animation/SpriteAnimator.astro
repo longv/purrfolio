@@ -1,16 +1,16 @@
 ---
-import Test from "@assets/sprites/siamese-licking.png";
 import type { ImageMetadata } from "astro";
 
 interface Props {
   src: ImageMetadata;
   totalFrames: number;
-  scale: number;
+  scale?: number;
 }
 
-const { src = Test, totalFrames = 15, scale = 3 } = Astro.props;
+const { src, totalFrames, scale = 3 } = Astro.props;
 const height = src.height;
 const width = src.width / totalFrames;
+const playTime = `${totalFrames / 5}s`; // 5 fps
 ---
 
 <div
@@ -29,9 +29,12 @@ const width = src.width / totalFrames;
   />
 </div>
 
-<style>
+<style define:vars={{ playTime, totalFrames }}>
   [data-srpitesheet] {
-    animation: moveSpritesheet 1s steps(5) infinite;
+    animation-name: moveSpritesheet;
+    animation-duration: var(--playTime);
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(var(--totalFrames));
   }
 
   @keyframes moveSpritesheet {

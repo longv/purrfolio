@@ -1,0 +1,23 @@
+---
+import ProjectCard from "@components/project/ProjectCard.astro";
+import DeliveryPunchImg from "@assets/images/delivery-punch.png";
+import TheOfficeShowdownImg from "@assets/images/the-office-showdown.jpeg";
+---
+
+<section class="my-36">
+  <div class="container">
+    <h2 class="mb-16 text-6xl">Project showcase</h2>
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <ProjectCard
+        img={TheOfficeShowdownImg}
+        title="Ludum Dare 55: The Office Showndown"
+        description="test asdasdasdasdasdaaaaaaaaaaaaaas asdasd asd asd asdsa d as:w asdi iasdiasidiasdi iasdi aisd iasid asid iasdasdasdasd asdi asid asd yessir oko koko lalalalal"
+      />
+      <ProjectCard
+        img={DeliveryPunchImg}
+        title="Ludum Dare 53: Delivery Punch"
+        description="asdasd"
+      />
+    </div>
+  </div>
+</section>

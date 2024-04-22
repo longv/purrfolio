@@ -1,5 +1,5 @@
 ---
-import Feature from "@components/Feature.astro";
+import ExpertiseCard from "@components/expertise/ExpertiseCard.astro";
 import SpriteAnimator from "@components/animation/SpriteAnimator.astro";
 import SiameseLickingSpriteSheet from "@assets/sprites/siamese-licking.png";
 import YellowLoafSpriteSheet from "@assets/sprites/yellow-loaf.png";
@@ -18,10 +18,13 @@ import PinkPlayingSpriteSheet from "@assets/sprites/pink-playing.png";
             totalFrames={15}
           />
         </div>
-        <Feature icon="vscode-icons:file-type-devcontainer" title="Fullstack">
+        <ExpertiseCard
+          icon="vscode-icons:file-type-devcontainer"
+          title="Fullstack"
+        >
           About 7 years of developing mobile and web applications, with broad
           and deep knowledge in both frontend and backend.
-        </Feature>
+        </ExpertiseCard>
       </div>
       <div class="relative pt-10">
         <div class="absolute -top-[80px] left-[80px]">
@@ -31,10 +34,10 @@ import PinkPlayingSpriteSheet from "@assets/sprites/pink-playing.png";
             totalFrames={4}
           />
         </div>
-        <Feature icon="vscode-icons:file-type-gdscript" title="Game">
+        <ExpertiseCard icon="vscode-icons:file-type-gdscript" title="Game">
           Passionate in games and currently pursuing game development as a side
           career.
-        </Feature>
+        </ExpertiseCard>
       </div>
       <div class="relative pt-10">
         <div class="absolute -right-[30px] -top-[100px] -scale-x-100">
@@ -44,10 +47,10 @@ import PinkPlayingSpriteSheet from "@assets/sprites/pink-playing.png";
             totalFrames={8}
           />
         </div>
-        <Feature icon="vscode-icons:file-type-pythowo" title="AI / ML">
+        <ExpertiseCard icon="vscode-icons:file-type-pythowo" title="AI / ML">
           Learning about Big Data as well as AI and Machine Learning at Aalto
           University to support current profession.
-        </Feature>
+        </ExpertiseCard>
       </div>
     </div>
   </div>

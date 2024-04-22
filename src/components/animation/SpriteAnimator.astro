@@ -1,0 +1,45 @@
+---
+import Test from "@assets/sprites/siamese-licking.png";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  src: ImageMetadata;
+  totalFrames: number;
+  scale: number;
+}
+
+const { src = Test, totalFrames = 15, scale = 3 } = Astro.props;
+const height = src.height;
+const width = src.width / totalFrames;
+---
+
+<div
+  class={"relative overflow-hidden"}
+  style={{ width: `${width * scale}px`, height: `${height * scale}px` }}
+>
+  <img
+    data-srpitesheet
+    class={"max-w-none absolute rendering-pixelated"}
+    style={{
+      width: `${src.width * scale}px`,
+      height: `${src.height * scale}px`,
+    }}
+    src={src.src}
+    alt="Spritesheet"
+  />
+</div>
+
+<style>
+  [data-srpitesheet] {
+    animation: moveSpritesheet 1s steps(5) infinite;
+  }
+
+  @keyframes moveSpritesheet {
+    from {
+      transform: translate3d(0px, 0, 0);
+    }
+    to {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+</style>

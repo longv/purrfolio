@@ -52,16 +52,12 @@ body {
   -webkit-font-smoothing: antialiased;
 
   a:not(.button) {
-    color: var(--action-color);
-    text-decoration: underline;
 
     &:visited {
-      color: var(--action-color);
     }
 
     &:hover,
     &:focus {
-      color: var(--action-color-state);
       text-decoration: none;
     }
   }

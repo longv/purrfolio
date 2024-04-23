@@ -19,22 +19,16 @@ const MainNavBar = () => {
     const observer = new IntersectionObserver((entries, _) => {
       entries.forEach((entry) => {
         const id = entry.target.getAttribute("id")
-        if (id) {
-          if (entry.isIntersecting) {
-            // Element is entering the screen, either from top or bottom.
-            // Or it is leaving the screen but still >= 50% visibility.
-            if (entry.intersectionRatio == 1) {
-              setActiveSection(id)
-            }
-          } else {
-            if (entry.intersectionRatio == 0 && id == "certificate") {
-              setActiveSection("radar")
-            }
+        console.log(id)
+        if (id && entry.isIntersecting) {
+          if (entry.intersectionRatio == 1 ||
+            entry.intersectionRatio >= 0.75 && id == "radar") {
+            setActiveSection(id)
           }
         }
       })
     }, {
-      threshold: [0.0, 1.0]
+      threshold: [0.75, 1.0]
     })
 
     const elements = document.querySelectorAll("[data-main-nav-item]")

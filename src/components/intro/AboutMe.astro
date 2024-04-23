@@ -8,9 +8,11 @@ import AvatarImg from "@assets/images/avatar.jpg";
 import { getEntry } from "astro:content";
 const entry = await getEntry("about", "me");
 const { Content } = await entry.render();
+
+const { ...props } = Astro.props;
 ---
 
-<section class="my-36">
+<section {...props} class="my-36">
   <div class="container flex flex-row">
     <div>
       <div class="mb-8 block h-60 w-60 overflow-hidden rounded-full shadow">

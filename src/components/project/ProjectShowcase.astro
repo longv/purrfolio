@@ -3,9 +3,11 @@ import ProjectCard from "@components/project/ProjectCard.astro";
 import DeliveryPunchImg from "@assets/images/delivery-punch.png";
 import TheOfficeShowdownImg from "@assets/images/the-office-showdown.jpeg";
 import JunctionAitoImg from "@assets/images/junction-partnered-aito.jpg";
+
+const { ...props } = Astro.props;
 ---
 
-<section class="my-36">
+<section {...props} class="my-36">
   <div class="container">
     <h2 class="mb-16 text-6xl">What has I done lately?</h2>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">

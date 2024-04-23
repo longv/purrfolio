@@ -6,13 +6,17 @@ import ExpertiseSummary from "@components/expertise/ExpertiseSummary.astro";
 import ProjectShowcase from "@components/project/ProjectShowcase.astro";
 import CertificateShowcase from "@components/certificate/CertificateShowcase.astro";
 import TechRadar from "@components/radar/TechRadar.astro";
+import MainNavBar from "@components/navigation/MainNavBar.tsx";
 ---
 
 <BaseLayout title="Home">
-  <Welcome />
-  <AboutMe />
-  <ExpertiseSummary />
-  <ProjectShowcase />
-  <CertificateShowcase />
-  <TechRadar />
+  <Welcome id="welcome" data-main-nav-item />
+  <AboutMe id="about" data-main-nav-item />
+  <ExpertiseSummary id="expertise" data-main-nav-item />
+  <ProjectShowcase id="project" data-main-nav-item />
+  <CertificateShowcase id="certificate" data-main-nav-item />
+  <TechRadar id="radar" data-main-nav-item />
+  <div class="sticky bottom-3 flex w-full flex-row justify-center">
+    <MainNavBar client:load />
+  </div>
 </BaseLayout>

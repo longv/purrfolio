@@ -4,9 +4,11 @@ import SpriteAnimator from "@components/animation/SpriteAnimator.astro";
 import SiameseLickingSpriteSheet from "@assets/sprites/siamese-licking.png";
 import YellowLoafSpriteSheet from "@assets/sprites/yellow-loaf.png";
 import PinkPlayingSpriteSheet from "@assets/sprites/pink-playing.png";
+
+const { ...props } = Astro.props;
 ---
 
-<section class="my-36">
+<section {...props} class="my-36">
   <div class="container">
     <h2 class="mb-16 text-6xl">Let's talk</h2>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">

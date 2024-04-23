@@ -1,7 +1,9 @@
 ---
 import WallpaperImg from "@assets/images/wallpaper.png";
+
+const { ...props } = Astro.props;
 ---
 
-<section class="h-screen w-screen">
+<section {...props} class="h-screen w-screen">
   <img src={WallpaperImg.src} alt="Site's wallpaper" />
 </section>

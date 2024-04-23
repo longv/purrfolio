@@ -9,6 +9,7 @@ import icon from "astro-icon";
 export default defineConfig({
   compressHTML: true,
   integrations: [mdx(), icon({
+    iconDir: "src/assets/icons",
     include: {
       icons: ["coursera", "udacity-icon"],
     }

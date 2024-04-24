@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { SegmentedControl, IconButton } from "@radix-ui/themes"
-import { DoubleArrowUpIcon } from "@radix-ui/react-icons"
+import { DoubleArrowUpIcon, DoubleArrowDownIcon } from "@radix-ui/react-icons"
 
 const MainNavBar = () => {
   const [activeSection, setActiveSection] = useState<string>()
@@ -40,28 +40,40 @@ const MainNavBar = () => {
   }, [])
 
   return (
-    <div className={`${activeSection != "welcome" ? "visible" : "hidden"} transition-all ease-in-out delay-150 duration-300`} >
-      <SegmentedControl.Root
-        radius="full"
-        value={activeSection}
-        onValueChange={navigateTo}
-      >
-        <SegmentedControl.Item value="about">About me</SegmentedControl.Item>
-        <SegmentedControl.Item value="expertise">Expertises</SegmentedControl.Item>
-        <SegmentedControl.Item value="project">Projects</SegmentedControl.Item>
-        <SegmentedControl.Item value="certificate">Certificates</SegmentedControl.Item>
-        <SegmentedControl.Item value="radar">Tech radar</SegmentedControl.Item>
-      </SegmentedControl.Root>
-      <IconButton
-        className="animate-bounce"
-        ml="1"
-        radius="full"
-        variant="surface"
-        onClick={() => navigateTo("welcome")}
-      >
-        <DoubleArrowUpIcon width="18" height="18" />
-      </IconButton>
-    </div >
+    <div>
+      <div className={`${activeSection == "welcome" ? "visible" : "hidden"} transition-all ease-in-out delay-150 duration-300`}>
+        <IconButton
+          className="animate-bounce"
+          ml="1"
+          radius="full"
+          variant="surface"
+          onClick={() => navigateTo("about")}
+        >
+          <DoubleArrowDownIcon width="18" height="18" />
+        </IconButton>
+      </div>
+      <div className={`${activeSection != "welcome" ? "visible" : "hidden"} transition-all ease-in-out delay-150 duration-300`} >
+        <SegmentedControl.Root
+          radius="full"
+          value={activeSection}
+          onValueChange={navigateTo}
+        >
+          <SegmentedControl.Item value="about">About me</SegmentedControl.Item>
+          <SegmentedControl.Item value="expertise">Expertises</SegmentedControl.Item>
+          <SegmentedControl.Item value="project">Projects</SegmentedControl.Item>
+          <SegmentedControl.Item value="certificate">Certificates</SegmentedControl.Item>
+          <SegmentedControl.Item value="radar">Tech radar</SegmentedControl.Item>
+        </SegmentedControl.Root>
+        <IconButton
+          ml="1"
+          radius="full"
+          variant="surface"
+          onClick={() => navigateTo("welcome")}
+        >
+          <DoubleArrowUpIcon width="18" height="18" />
+        </IconButton>
+      </div >
+    </div>
   )
 }
 

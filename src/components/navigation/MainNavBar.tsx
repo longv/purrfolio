@@ -40,7 +40,7 @@ const MainNavBar = () => {
   }, [])
 
   return (
-    <div className={`${activeSection != "welcome" ? "opacity-100" : "opacity-0"} transition-opacity ease-in-out delay-50 duration-200`} >
+    <div className={`${activeSection != "welcome" ? "visible" : "hidden"} transition-all ease-in-out delay-150 duration-300`} >
       <SegmentedControl.Root
         radius="full"
         value={activeSection}

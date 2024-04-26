@@ -4,7 +4,6 @@ import "@astrojs/tailwind/base.css";
 import "@assets/scss/globals.scss";
 import { Theme } from "@radix-ui/themes";
 import SiteMeta from "@components/SiteMeta.astro";
-import Header from "@components/common/Header.astro";
 
 const {
   title = "Astro",
@@ -38,7 +37,6 @@ const {
   </head>
   <body>
     <Theme>
-      <Header />
       <main id="main-content" transition:animate="fade">
         <slot />
       </main>

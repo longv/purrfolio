@@ -22,20 +22,20 @@ const Bosses = () => {
   }, [activeBoss])
 
   return (
-    <div className="relative h-screen w-screen">
+    <div className="relative h-full w-full">
       <div
         className={cn(
-          `${activeBoss == 0 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-row p-10`,
+          `${activeBoss == 0 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-row p-16`,
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >
-        <img className="h-[56%] w-[45%] self-end" src={BongImg.src} alt="Bong" />
+        <img className="h-[60%] w-[45%] self-end" src={BongImg.src} alt="Bong" />
         <Blockquote name="Bong" description="The Tsundere" quote="The brain technically named itself." />
       </div>
 
       <div
         className={cn(
-          `${activeBoss == 1 ? "opacity-100" : "opacity-0"}  absolute flex h-full w-full flex-row py-10 pl-24 pr-10`,
+          `${activeBoss == 1 ? "opacity-100" : "opacity-0"}  absolute flex h-full w-full flex-row py-20 pl-24 pr-10`,
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >
@@ -45,7 +45,7 @@ const Bosses = () => {
 
       <div
         className={cn(
-          `${activeBoss == 2 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-row py-10 pl-20 pr-10`,
+          `${activeBoss == 2 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-row py-20 pl-20 pr-10`,
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >
@@ -55,7 +55,7 @@ const Bosses = () => {
 
       <div
         className={cn(
-          `${activeBoss == 3 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-row py-10 pl-24 pr-10`,
+          `${activeBoss == 3 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-row py-20 pl-24 pr-10`,
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >

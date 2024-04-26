@@ -1,9 +1,11 @@
 ---
+import Header from "@components/common/Header.astro";
 import Bosses from "@components/intro/Bosses.tsx";
 
 const { ...props } = Astro.props;
 ---
 
-<section {...props} class:list={["mb-36", "dark:bg-gray-800"]}>
+<section {...props} class:list={["h-svh w-screen mb-36", "dark:bg-gray-800"]}>
+  <Header />
   <Bosses client:load />
 </section>

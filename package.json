@@ -25,6 +25,7 @@
     "astro": "^4.6.3",
     "astro-compress": "^2.0.6",
     "astro-icon": "^1.1.0",
+    "classnames": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.4.5"

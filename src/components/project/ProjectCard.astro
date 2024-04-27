@@ -6,12 +6,14 @@ interface Props extends HTMLAttributes<"div"> {
   img: ImageMetadata;
   title: string;
   description: string;
+  slug: string;
 }
 
 const {
   img,
   title = "title",
   description = "description",
+  slug = "",
   ...props
 } = Astro.props;
 ---
@@ -23,20 +25,28 @@ const {
     "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300",
   ]}
 >
-  <img class="h-1/2 w-full rounded-t-lg" src={img.src} alt="Project's image" />
+  <a href=`/project/${slug}`>
+    <img
+      class="h-1/2 w-full rounded-t-lg"
+      src={img.src}
+      alt="Project's image"
+    />
+  </a>
   <div class="p-5">
-    <h5
-      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-    >
-      {title}
-    </h5>
-    <p
-      class="mb-14 line-clamp-3 overflow-hidden text-ellipsis font-normal text-gray-700 dark:text-gray-400"
-    >
-      {description}
-    </p>
+    <a href=`/project/${slug}`>
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        {title}
+      </h5>
+      <p
+        class="mb-14 line-clamp-3 overflow-hidden text-ellipsis font-normal text-gray-700 dark:text-gray-400"
+      >
+        {description}
+      </p>
+    </a>
     <a
-      href="#"
+      href={`/project/${slug}`}
       class="absolute bottom-3 left-4 inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
     >
       Read more

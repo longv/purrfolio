@@ -1,4 +1,6 @@
 ---
+import ProjectLayout from "@layouts/ProjectLayout.astro"
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -12,4 +14,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Content />
+<ProjectLayout frontmatter={entry.data}>
+  <Image class="w-svw h-[30rem]" src={entry.data.cover} alt={entry.data.coverAlt} slot="cover" />
+  <Content />
+</ProjectLayout>

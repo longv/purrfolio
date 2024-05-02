@@ -5,6 +5,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
+  <slot name="cover" />
   <div class="markdown container">
     <div class="space-content my-12">
       <slot />

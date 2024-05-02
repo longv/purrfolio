@@ -51,17 +51,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
-  a:not(.button) {
-
-    &:visited {
-    }
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
-  }
-
   :where(main) a {
     word-wrap: break-word;
     word-break: break-word;

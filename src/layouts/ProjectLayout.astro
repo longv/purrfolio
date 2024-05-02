@@ -5,9 +5,21 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
-  <div class="container">
+  <div class="markdown container">
     <div class="space-content my-12">
       <slot />
     </div>
   </div>
 </BaseLayout>
+
+<style lang="scss" is:global>
+  .markdown {
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+</style>

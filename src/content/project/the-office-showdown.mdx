@@ -1,11 +1,36 @@
 ---
+layout: ../../layouts/ProjectLayout.astro
 title: "Ludum Dare 55: The Office Showdown"
 summary: "
 I participated in Ludum Dare's game jam again to try out Godot.
-This time the theme was about Summoning and I immediately came up with an idea of being summoned to endless meetings!
-Then my partner suggested that we should be chased in a PacMac style with the ghosts now are the managers.
+This time the theme was about Summoning and I immediately came up with an idea of being summoned to endless meetings.
+However, we should not surrender to these requests willingly. 
+Finally, my partner suggested that the game can be played a PacMac style and we can actually fight back.
 Hence we presents to you The Office Showdown!
 "
 cover: "../../assets/images/the-office-showdown.jpeg"
 coverAlt: "The Office Showdown's game menu"
 ---
+
+# {frontmatter.title}
+
+## Summary
+
+{frontmatter.summary}
+
+## Links
+
+- [Ludum Dare 55](https://ldjam.com/events/ludum-dare/55/the-office-showdown)
+- [Itch.io](https://longv.itch.io/the-office-showdown)
+
+## Tech stack
+
+- Godot Engine 4
+- GDScript
+
+## Lessons learned
+
+- Made a top-down game.
+- Handled complex collisions.
+- Learned and implemented Pac Man's ghosts behavior (the [case study]() was very interesting).
+- Utilised Godot's NavigationAgent2D (basically a path finder) with A\* algorithm.

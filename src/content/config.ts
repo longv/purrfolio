@@ -7,6 +7,7 @@ const projectCollection = defineCollection({
     summary: z.string(),
     cover: image(),
     coverAlt: z.string(),
+    date: z.date(),
     tags: z.array(z.string()).optional(),
   }),
 });

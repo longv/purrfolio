@@ -4,7 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title}>
+<BaseLayout subtitle={frontmatter.title}>
   <slot name="cover" />
   <div class="markdown container">
     <div class="space-content my-12">

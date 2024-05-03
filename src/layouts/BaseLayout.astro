@@ -7,11 +7,9 @@ import SiteMeta from "@components/SiteMeta.astro";
 import { slide } from "astro:transitions";
 
 const {
-  title = "Astro",
-  description = "A starter project with accessibility features using Astro static site builder. Contains accessible landmarks, skip links, a dark mode color scheme, better focus outline and keyboard menu navigation.",
-  url,
-  image = "/social-preview-image.png",
-  author = "Mark Teekman",
+  title = "longv",
+  subtitle = "Purrfolio",
+  description = "",
 } = Astro.props;
 ---
 
@@ -26,14 +24,8 @@ const {
 
     <SiteMeta
       title={title}
+      subtitle={subtitle}
       description={description.substring(0, 100)}
-      url={Astro.site
-        ? `${Astro.site}/${title.toLowerCase().replaceAll(" ", "-")}`
-        : `https://accessible-astro.dev/${title
-            .toLowerCase()
-            .replaceAll(" ", "-")}`}
-      image={image}
-      author={author}
     />
   </head>
   <body>

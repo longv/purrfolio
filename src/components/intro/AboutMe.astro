@@ -5,15 +5,11 @@ import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { Image } from "astro:assets";
 import AvatarImg from "@assets/images/avatar.jpg";
 
-import { getEntry } from "astro:content";
-const entry = await getEntry("about", "me");
-const { Content } = await entry.render();
-
 const { ...props } = Astro.props;
 ---
 
 <section {...props} class="mb-36">
-  <div class="container flex flex-row">
+  <div class="container flex w-svw flex-row">
     <div>
       <div class="mb-8 block h-60 w-60 overflow-hidden rounded-full shadow">
         <Image src={AvatarImg} alt="My avatar" />
@@ -32,7 +28,28 @@ const { ...props } = Astro.props;
       </div>
     </div>
     <div class="grow px-20">
-      <Content />
+      <h2
+        class:list={[
+          "content-center text-5xl my-3 font-semibold tracking-tight text-gray-900 ",
+          "dark:text-white",
+        ]}
+      >
+        Hi there!
+      </h2>
+      <p class:list={["my-5 font-normal text-gray-700", "dark:text-gray-400"]}>
+        You might have met my bosses. Now, here are some facts about me:
+      </p>
+      <ul>
+        <li>I'm a software engineer based in Helsinki, Finland.</li>
+        <li>I'm both a cat and dog person.</li>
+        <li>
+          I'm a hardcore gamer who enjoys playing all kinds of games, especially
+          FPS.
+        </li>
+        <li>
+          I'm also a sports enthusiast and enjoy playing almost every sport.
+        </li>
+      </ul>
     </div>
   </div>
 </section>

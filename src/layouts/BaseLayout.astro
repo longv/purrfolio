@@ -4,6 +4,7 @@ import "@astrojs/tailwind/base.css";
 import "@assets/scss/globals.scss";
 import { Theme } from "@radix-ui/themes";
 import SiteMeta from "@components/SiteMeta.astro";
+import { slide } from "astro:transitions";
 
 const {
   title = "Astro",
@@ -14,7 +15,7 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" transition:animate="none">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,7 +38,7 @@ const {
   </head>
   <body>
     <Theme>
-      <main id="main-content" transition:animate="fade">
+      <main id="main-content" transition:animate={slide({ duration: "0.6" })}>
         <slot />
       </main>
     </Theme>

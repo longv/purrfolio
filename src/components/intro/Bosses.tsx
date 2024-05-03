@@ -64,7 +64,7 @@ const Bosses = () => {
       </div>
 
       <a
-        href="https://www.instagram.com/tonobuu/?utm_source=qr"
+        href="https://www.instagram.com/tonobuu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
         className={cn(
           "z-100 inline-flex absolute right-2 bottom-2 items-center justify-center py-2 px-4 text-base font-medium text-gray-500 rounded-full bg-gray-50",
           "hover:text-gray-900 hover:bg-gray-100",

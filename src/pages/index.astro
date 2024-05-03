@@ -10,13 +10,15 @@ import MainNavBar from "@components/navigation/MainNavBar.tsx";
 ---
 
 <BaseLayout title="Home">
-  <Welcome id="welcome" data-main-nav-item />
-  <AboutMe id="about" data-main-nav-item />
-  <ExpertiseSummary id="expertise" data-main-nav-item />
-  <ProjectShowcase id="project" data-main-nav-item />
-  <CertificateShowcase id="certificate" data-main-nav-item />
-  <TechRadar id="radar" data-main-nav-item />
-  <div class="sticky bottom-3 flex w-full flex-row justify-center">
-    <MainNavBar client:load />
+  <div class="flex h-fit w-full flex-col items-center">
+    <Welcome id="welcome" data-main-nav-item />
+    <AboutMe id="about" data-main-nav-item />
+    <ExpertiseSummary id="expertise" data-main-nav-item />
+    <ProjectShowcase id="project" data-main-nav-item />
+    <CertificateShowcase id="certificate" data-main-nav-item />
+    <TechRadar id="radar" data-main-nav-item />
+    <div class="sticky bottom-3 w-fit">
+      <MainNavBar client:load />
+    </div>
   </div>
 </BaseLayout>

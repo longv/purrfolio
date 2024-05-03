@@ -40,7 +40,7 @@ const Bosses = () => {
         )}
       >
         <img className="h-[63%] w-[32%] self-end" src={SamImg.src} alt="Bong" />
-        <Blockquote name="Sam" description="The Carton Destroyer" quote="If you're an idiot and you know you're an idiot , you're already way less of an idiot than an idiot that doesn't release he's an idiot." />
+        <Blockquote name="Sam" description="The Carton Destroyer" quote="Gotta bite them all!" />
       </div>
 
       <div
@@ -60,8 +60,22 @@ const Bosses = () => {
         )}
       >
         <img className="h-[70%] w-[35%] self-end" src={BuImg.src} alt="Bong" />
-        <Blockquote name="Bu" description="The XYZ" quote="A bus 10 minutes early is way worse than a bus 10 minuts late." />
+        <Blockquote name="Bu" description="The Player" quote="A bus 10 minutes early is way worse than a bus 10 minuts late." />
       </div>
+
+      <a
+        href="https://www.instagram.com/tonobuu/?utm_source=qr"
+        className={cn(
+          "z-100 inline-flex absolute right-2 bottom-2 items-center justify-center py-2 px-4 text-base font-medium text-gray-500 rounded-full bg-gray-50",
+          "hover:text-gray-900 hover:bg-gray-100",
+          "dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+        )}
+      >
+        <span className="w-full">Art by tonobuu</span>
+        <svg className="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+        </svg>
+      </a>
     </div>
   )
 }

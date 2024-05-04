@@ -10,6 +10,7 @@ const MainNavBar = () => {
     const element = document.getElementById(dest)
     if (element) {
       element?.scrollIntoView({
+        block: "center",
         behavior: "smooth"
       })
       setActiveSection(dest)
@@ -20,7 +21,7 @@ const MainNavBar = () => {
     const observer = new IntersectionObserver((entries, _) => {
       entries.forEach((entry) => {
         const id = entry.target.getAttribute("id")
-        console.log(id)
+
         if (id && entry.isIntersecting) {
           if (entry.intersectionRatio == 1 ||
             entry.intersectionRatio >= 0.75 && id == "radar") {

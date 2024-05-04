@@ -27,12 +27,5 @@ export default defineConfig({
     }),
     react(),
     markdoc(),
-    (await import("@playform/compress")).default({
-      CSS: true,
-      HTML: true,
-      Image: false,
-      JavaScript: true,
-      SVG: true,
-    }),
   ]
 });

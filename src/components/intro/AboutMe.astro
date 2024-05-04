@@ -9,12 +9,22 @@ const { ...props } = Astro.props;
 ---
 
 <section {...props} class="mb-36">
-  <div class="container flex w-svw flex-row">
-    <div>
+  <div
+    class:list={[
+      "container flex w-svw flex-col gap-y-5",
+      "md:flex-row md:gap-y-0",
+    ]}
+  >
+    <div class:list={["flex flex-col items-center"]}>
       <div class="mb-8 block h-60 w-60 overflow-hidden rounded-full shadow">
         <Image src={AvatarImg} alt="My avatar" />
       </div>
-      <div class="flex flex-row justify-evenly">
+      <div
+        class:list={[
+          "flex w-full flex-row justify-center gap-x-2",
+          "md:justify-evenly md:gap-x-0",
+        ]}
+      >
         <a href="https://github.com/longv">
           <Button variant="outline" radius="full">
             <GitHubLogoIcon /> GitHub

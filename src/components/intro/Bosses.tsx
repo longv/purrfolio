@@ -30,7 +30,14 @@ const Bosses = () => {
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >
-        <img className={cn("h-[30%] w-[60%] self-center", "xl:h-[60%] xl:w-[45%] xl:self-end")} src={BongImg.src} alt="Bong" />
+        <img
+          className={cn(
+            "h-[30%] w-[60%] self-center",
+            "lg:h-[40%] lg:w-[35%] xl:h-[60%] xl:w-[45%] xl:self-end"
+          )}
+          src={BongImg.src}
+          alt="Bong"
+        />
         <Blockquote name="Bong" description="The Tsundere" quote="The brain technically named itself." />
       </div>
 
@@ -41,7 +48,14 @@ const Bosses = () => {
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >
-        <img className={cn("h-[33%] w-[38%] self-center", "xl:h-[63%] xl:w-[32%] xl:self-end")} src={SamImg.src} alt="Bong" />
+        <img
+          className={cn(
+            "h-[33%] w-[38%] self-center",
+            "lg:h-[43%] lg:w-[30%] xl:h-[63%] xl:w-[32%] xl:self-end"
+          )}
+          src={SamImg.src}
+          alt="Bong"
+        />
         <Blockquote name="Sam" description="The Carton Destroyer" quote="Gotta bite them all!" />
       </div>
 
@@ -52,7 +66,14 @@ const Bosses = () => {
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >
-        <img className={cn("h-[33%] w-[47%] self-center", "xl:h-[65%] xl:w-[35%] xl:self-end")} src={NoImg.src} alt="Bong" />
+        <img
+          className={cn(
+            "h-[33%] w-[47%] self-center",
+            "lg:h-[45%] lg:w-[30%] xl:h-[65%] xl:w-[35%] xl:self-end"
+          )}
+          src={NoImg.src}
+          alt="Bong"
+        />
         <Blockquote name="No" description="The Sleeper" quote="What should I eat tonight?" />
       </div>
 
@@ -63,7 +84,14 @@ const Bosses = () => {
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >
-        <img className={cn("h-[33%] w-[42%] self-center", "xl:h-[70%] xl:w-[35%] xl:self-end")} src={BuImg.src} alt="Bong" />
+        <img
+          className={cn(
+            "h-[33%] w-[42%] self-center",
+            "lg:h-[42%] lg:w-[30%] xl:h-[70%] xl:w-[35%] xl:self-end"
+          )}
+          src={BuImg.src}
+          alt="Bong"
+        />
         <Blockquote name="Bu" description="The Player" quote="A bus 10 minutes early is way worse than a bus 10 minuts late." />
       </div>
 

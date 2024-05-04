@@ -4,6 +4,6 @@ import Bosses from "@components/intro/Bosses.tsx";
 const { ...props } = Astro.props;
 ---
 
-<section {...props} class:list={["h-svh w-screen mb-36", "dark:bg-gray-800"]}>
+<section {...props} class:list={["h-svh w-screen", "dark:bg-gray-800"]}>
   <Bosses client:load />
 </section>

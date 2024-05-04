@@ -4,7 +4,6 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import icon from "astro-icon";
-import playformCompress from "@playform/compress";
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,6 +27,6 @@ export default defineConfig({
     }),
     react(),
     markdoc(),
-    playformCompress()
+    (await import("@playform/compress")).default(),
   ]
 });

@@ -25,41 +25,45 @@ const Bosses = () => {
     <div className="relative h-full w-full">
       <div
         className={cn(
-          `${activeBoss == 0 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-row p-16`,
+          `${activeBoss == 0 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-col justify-center`,
+          "md:flex-row md:p-16",
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >
-        <img className="h-[60%] w-[45%] self-end" src={BongImg.src} alt="Bong" />
+        <img className={cn("h-[30%] w-[60%] self-center", "md:h-[60%] md:w-[45%] md:self-end")} src={BongImg.src} alt="Bong" />
         <Blockquote name="Bong" description="The Tsundere" quote="The brain technically named itself." />
       </div>
 
       <div
         className={cn(
-          `${activeBoss == 1 ? "opacity-100" : "opacity-0"}  absolute flex h-full w-full flex-row py-20 pl-24 pr-10`,
+          `${activeBoss == 1 ? "opacity-100" : "opacity-0"}  absolute flex h-full w-full flex-col justify-center`,
+          "md:flex-row md:pr-10 md:pl-24",
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >
-        <img className="h-[63%] w-[32%] self-end" src={SamImg.src} alt="Bong" />
+        <img className={cn("h-[33%] w-[35%] self-center", "md:h-[63%] md:w-[32%] md:self-end")} src={SamImg.src} alt="Bong" />
         <Blockquote name="Sam" description="The Carton Destroyer" quote="Gotta bite them all!" />
       </div>
 
       <div
         className={cn(
-          `${activeBoss == 2 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-row py-20 pl-20 pr-10`,
+          `${activeBoss == 2 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-col justify-center`,
+          "md:flex-row md:pr-10 md:pl-20",
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >
-        <img className="h-[65%] w-[35%] self-end" src={NoImg.src} alt="Bong" />
+        <img className={cn("h-[30%] w-[40%] self-center", "md:h-[65%] md:w-[35%] md:self-end")} src={NoImg.src} alt="Bong" />
         <Blockquote name="No" description="The Sleeper" quote="What should I eat tonight?" />
       </div>
 
       <div
         className={cn(
-          `${activeBoss == 3 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-row py-20 pl-24 pr-10`,
+          `${activeBoss == 3 ? "opacity-100" : "opacity-0"} absolute flex h-full w-full flex-col justify-center`,
+          "md:flex-row md:pr-10 md:pl-24",
           "transition-opacity ease-in-out delay-150 duration-1000"
         )}
       >
-        <img className="h-[70%] w-[35%] self-end" src={BuImg.src} alt="Bong" />
+        <img className={cn("h-[30%] w-[40%] self-center", "md:h-[70%] md:w-[35%] md:self-end")} src={BuImg.src} alt="Bong" />
         <Blockquote name="Bu" description="The Player" quote="A bus 10 minutes early is way worse than a bus 10 minuts late." />
       </div>
 

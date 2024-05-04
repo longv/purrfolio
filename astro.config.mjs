@@ -8,6 +8,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://longv.github.io",
   compressHTML: true,
   integrations: [
     mdx({

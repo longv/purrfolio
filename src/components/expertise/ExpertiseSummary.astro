@@ -8,10 +8,9 @@ const { ...props } = Astro.props;
 
 <section {...props} class="my-20">
   <div class="container">
-    <div class="relative flex w-fit flex-row">
-      <h2 class:list={["mb-16 text-5xl", "md:text-6xl"]}>Let's talk</h2>
+    <div class="flex w-full flex-row flex-wrap items-center">
+      <h2 class:list={["text-5xl", "md:text-6xl"]}>Let's talk</h2>
       <SpriteAnimator
-        class="absolute -right-40 -top-[75px]"
         slot="sprite"
         src={SiameseLickingSpriteSheet}
         totalFrames={15}

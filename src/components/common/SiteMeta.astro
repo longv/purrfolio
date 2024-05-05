@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 const {
   title = "longv",
   subtitle = "Purrfolio",
@@ -17,3 +19,5 @@ const {
 
 <!-- page title -->
 <title>{title} - {subtitle}</title>
+
+<ViewTransitions />

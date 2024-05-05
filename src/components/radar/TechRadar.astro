@@ -15,224 +15,222 @@ const { ...props } = Astro.props;
 ></script>
 
 <script is:inline>
-  document.addEventListener("astro:page-load", () => {
-    radar_visualization({
-      svg_id: "radar",
-      width: 1450,
-      height: 1000,
-      scale: 1.0,
-      colors: {
-        background: "#fff",
-        grid: "#bbb",
-        inactive: "#ddd",
+  radar_visualization({
+    svg_id: "radar",
+    width: 1450,
+    height: 1000,
+    scale: 1.0,
+    colors: {
+      background: "#fff",
+      grid: "#bbb",
+      inactive: "#ddd",
+    },
+    title: "My Tech Radar",
+    quadrants: [
+      { name: "Blazingly Fast?" }, // 0
+      { name: "Platform & Tools" }, // 1
+      { name: "Domain" }, // 2
+      { name: "Languages" }, // 3
+    ],
+    rings: [
+      { name: "EXPERT", color: "#5ba300" }, // 0
+      { name: "EXPERIENCED", color: "#009eb0" }, // 1
+      { name: "SKILLFUL", color: "#c7ba00" }, // 2
+      { name: "BEGINNER", color: "#e09b96" }, // 3
+    ],
+    print_layout: true,
+    links_in_new_tabs: true,
+    entries: [
+      // Languages
+      {
+        label: "Kotlin",
+        quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 0, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
       },
-      title: "My Tech Radar",
-      quadrants: [
-        { name: "Blazingly Fast?" }, // 0
-        { name: "Platform & Tools" }, // 1
-        { name: "Domain" }, // 2
-        { name: "Languages" }, // 3
-      ],
-      rings: [
-        { name: "EXPERT", color: "#5ba300" }, // 0
-        { name: "EXPERIENCED", color: "#009eb0" }, // 1
-        { name: "SKILLFUL", color: "#c7ba00" }, // 2
-        { name: "BEGINNER", color: "#e09b96" }, // 3
-      ],
-      print_layout: true,
-      links_in_new_tabs: true,
-      entries: [
-        // Languages
-        {
-          label: "Kotlin",
-          quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 0, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Java",
-          quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 0, // 0,1,2,3 (starting from inside)
-          moved: -1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Typescript",
-          quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Go",
-          quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "C++",
-          quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "GDScript",
-          quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "C#",
-          quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: -1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Python",
-          quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 2, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Lua",
-          quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 3, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Ruby",
-          quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 3, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        // Domain
-        {
-          label: "Mobile Development",
-          quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 0, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Web Development",
-          quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Backend Development",
-          quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Game Development",
-          quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "DevOps",
-          quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "AI & Machine Learning",
-          quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 3, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        // Platforms & Tools
-        {
-          label: "Android",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 0, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Godot",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Unity",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "React",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "ReactNative",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: -1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "NodeJs",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Github Actions",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Fastlane",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 1, // 0,1,2,3 (starting from inside)
-          moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "GCP",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 2, // 0,1,2,3 (starting from inside)
-          moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Bigtable",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 2, // 0,1,2,3 (starting from inside)
-          moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Redis",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 2, // 0,1,2,3 (starting from inside)
-          moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "MongoDB",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 2, // 0,1,2,3 (starting from inside)
-          moved: -1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "JavaEE",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 2, // 0,1,2,3 (starting from inside)
-          moved: -1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        {
-          label: "Astro",
-          quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 3, // 0,1,2,3 (starting from inside)
-          moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-        // Misc
-        {
-          label: "Neovim",
-          quadrant: 0, // 0,1,2,3 (counting clockwise, starting from bottom right)
-          ring: 2, // 0,1,2,3 (starting from inside)
-          moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
-        },
-      ],
-    });
+      {
+        label: "Java",
+        quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 0, // 0,1,2,3 (starting from inside)
+        moved: -1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Typescript",
+        quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Go",
+        quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "C++",
+        quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "GDScript",
+        quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "C#",
+        quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: -1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Python",
+        quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 2, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Lua",
+        quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 3, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Ruby",
+        quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 3, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      // Domain
+      {
+        label: "Mobile Development",
+        quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 0, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Web Development",
+        quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Backend Development",
+        quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Game Development",
+        quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "DevOps",
+        quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "AI & Machine Learning",
+        quadrant: 2, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 3, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      // Platforms & Tools
+      {
+        label: "Android",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 0, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Godot",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Unity",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "React",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "ReactNative",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: -1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "NodeJs",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Github Actions",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Fastlane",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 1, // 0,1,2,3 (starting from inside)
+        moved: 0, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "GCP",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 2, // 0,1,2,3 (starting from inside)
+        moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Bigtable",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 2, // 0,1,2,3 (starting from inside)
+        moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Redis",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 2, // 0,1,2,3 (starting from inside)
+        moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "MongoDB",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 2, // 0,1,2,3 (starting from inside)
+        moved: -1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "JavaEE",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 2, // 0,1,2,3 (starting from inside)
+        moved: -1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      {
+        label: "Astro",
+        quadrant: 1, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 3, // 0,1,2,3 (starting from inside)
+        moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+      // Misc
+      {
+        label: "Neovim",
+        quadrant: 0, // 0,1,2,3 (counting clockwise, starting from bottom right)
+        ring: 2, // 0,1,2,3 (starting from inside)
+        moved: 1, // -1 = moved out (triangle pointing down), 0 = not moved (circle), 1 = moved in  (triangle pointing up)
+      },
+    ],
   });
 </script>

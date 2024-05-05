@@ -10,7 +10,7 @@ const MainNavBar = () => {
     const element = document.getElementById(dest)
     if (element) {
       element?.scrollIntoView({
-        block: "center",
+        block: "start",
         behavior: "smooth"
       })
       setActiveSection(dest)

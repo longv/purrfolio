@@ -14,7 +14,8 @@ const Blockquote: React.FC<BlockquoteProps> = ({
     <figure className="max-w-screen-md mx-auto text-center self-center">
       <svg
         className={cn(
-          "w-10 h-10 mx-auto mb-3 text-gray-400",
+          "w-7 h-7 mx-auto mb-3 text-gray-400",
+          "md:w-10 md:h-10",
           "dark:text-gray-600"
         )}
         aria-hidden="true"
@@ -27,7 +28,8 @@ const Blockquote: React.FC<BlockquoteProps> = ({
       <blockquote>
         <p
           className={cn(
-            "text-2xl italic font-medium text-gray-900",
+            "text-lg italic font-medium text-gray-900",
+            "md:text-2xl",
             "dark:text-white"
           )}
         >

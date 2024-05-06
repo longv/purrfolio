@@ -8,13 +8,9 @@ const { ...props } = Astro.props;
   </div>
 </section>
 
-<script is:inline src="https://d3js.org/d3.v4.min.js"></script>
-<script
-  is:inline
-  src="https://zalando.github.io/tech-radar/release/radar-0.8.js"
-></script>
+<script>
+  import { radar_visualization } from "./radar.js";
 
-<script is:inline>
   radar_visualization({
     svg_id: "radar",
     width: 1450,
